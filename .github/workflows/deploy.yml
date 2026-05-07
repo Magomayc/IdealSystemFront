@@ -50,7 +50,7 @@ jobs:
       - name: 🏗️ Build de produção
         run: npm run build
         env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL || 'http://2.24.83.230:8080' }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL || '/api' }}
 
       - name: 📤 Upload do build artifact
         uses: actions/upload-artifact@v4
@@ -93,7 +93,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
-            VITE_API_URL=${{ secrets.VITE_API_URL || 'http://2.24.83.230:8080' }}
+            VITE_API_URL=${{ secrets.VITE_API_URL || '/api' }}
 
   # ──────────────────────────────────────────
   # Job 3: Deploy no VPS Hostinger

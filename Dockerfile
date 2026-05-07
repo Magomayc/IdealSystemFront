@@ -13,8 +13,8 @@ RUN npm ci
 # Copiar todo o código fonte
 COPY . .
 
-# Argumento de build para a URL da API (injetada no build)
-ARG VITE_API_URL=http://localhost:5110
+# Argumento de build para a URL da API (via proxy reverso do Nginx)
+ARG VITE_API_URL=/api
 ENV VITE_API_URL=$VITE_API_URL
 
 # Build de produção
