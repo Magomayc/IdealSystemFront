@@ -10,7 +10,7 @@
 #   VPS_HOST             → IP ou domínio do seu VPS Hostinger
 #   VPS_USERNAME         → Usuário SSH do VPS (ex: root)
 #   VPS_SSH_KEY          → Chave SSH privada para acessar o VPS
-#   VITE_API_URL         → URL da API em produção (ex: https://api.seudominio.com)
+#   VITE_API_URL         → URL da API em produção (ex: http://2.24.83.230:8080)
 # ============================================
 
 name: Deploy GadoFront
@@ -50,7 +50,7 @@ jobs:
       - name: 🏗️ Build de produção
         run: npm run build
         env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL || 'http://2.24.83.230:8080' }}
 
       - name: 📤 Upload do build artifact
         uses: actions/upload-artifact@v4
@@ -93,7 +93,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
-            VITE_API_URL=${{ secrets.VITE_API_URL }}
+            VITE_API_URL=${{ secrets.VITE_API_URL || 'http://2.24.83.230:8080' }}
 
   # ──────────────────────────────────────────
   # Job 3: Deploy no VPS Hostinger
