@@ -1,0 +1,235 @@
+/* --- CONTAINER E LAYOUT --- */
+.container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  /* 👇 AJUSTADO: Removida a centralização vertical para colar no topo */
+  padding: 1.5rem; /* Margem externa (topo e laterais) ajustada */
+}
+
+.contentWrapper {
+  max-width: 1500px; /* 👇 AJUSTADO: Aumentado de 1200px para 1500px para usar mais a tela e ter menos borda */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+  width: 100%;
+}
+
+.loadingContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-weight: 500;
+  background-color: #f8fafc;
+}
+
+/* --- SEÇÃO HERO (BOTÕES DE AÇÃO) --- */
+.heroSection {
+  margin-top: 0;
+}
+
+.heroTitle {
+  font-size: 1.5rem; 
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.025em;
+}
+
+.heroSubtitle {
+  color: #64748b;
+  margin-bottom: 1rem; 
+  font-size: 0.9rem;
+}
+
+.actionButtonsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem; 
+}
+
+/* Base dos Botões Grandes */
+.bigButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem; 
+  border-radius: 1.25rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.bigButton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.bigButton:active { transform: scale(0.98); }
+
+.btnOrange { background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%); color: white; }
+.btnGreen { background: linear-gradient(135deg, #4ade80 0%, #16a34a 100%); color: white; }
+.btnYellow { background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%); color: white; }
+
+.btnContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; 
+}
+
+.btnTitle { font-size: 1.25rem; font-weight: 700; line-height: 1; }
+.btnDesc { font-size: 0.85rem; opacity: 0.9; font-weight: 500; }
+
+.iconBg { opacity: 0.25; transform: scale(1); transition: transform 0.3s ease; }
+.bigButton:hover .iconBg { transform: scale(1.1) rotate(5deg); opacity: 0.35; }
+
+/* --- SEÇÃO DASHBOARD --- */
+.dashboardSection { padding-top: 0; }
+
+.sectionTitle {
+  font-size: 1.1rem; 
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem; 
+}
+
+/* Grid específica para a trilogia de lucros ocupar toda a largura */
+.trilogyGrid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+/* Cards de KPIs */
+.card {
+  background-color: white;
+  border-radius: 1rem; 
+  padding: 1rem; 
+  cursor: pointer;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 130px; 
+}
+
+.card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem; 
+}
+
+.iconBubble {
+  width: 44px; 
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubbleOrange { background-color: #fff7ed; color: #ea580c; }
+.bubbleBlue { background-color: #eff6ff; color: #3b82f6; }
+.bubbleGreen { background-color: #f0fdf4; color: #16a34a; }
+.bubbleRed { background-color: #fef2f2; color: #dc2626; }
+
+.cardLabel {
+  font-size: 0.8rem; 
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Textos principais do Card (números) */
+.cardValue {
+  font-size: 1.8rem; 
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: baseline; 
+  gap: 4px;
+  flex-wrap: wrap;
+  line-height: 1.1; 
+}
+
+/* Estilo para palavras como "kg", "cabeças", "animais" */
+.valueUnit {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+/* --- ESTILOS DE RODAPÉ (SINGLE E DUPLO) --- */
+
+/* Rodapé padrão (1 linha) */
+.cardFooter {
+  margin-top: auto;
+  padding-top: 0.75rem; 
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem; 
+  font-weight: 600;
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+
+/* Rodapé em formato de Coluna (Usado nas Mortes e no Milho) */
+.cardFooterCol {
+  margin-top: auto;
+  padding-top: 0.5rem; 
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 4px; 
+  font-size: 0.75rem; 
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+/* Linha interna da coluna */
+.footerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.card:hover .cardFooter { color: #475569; }
+
+.arrowIcon { transition: transform 0.2s; }
+.card:hover .arrowIcon { transform: translateX(4px); color: #0f172a; }

@@ -1,0 +1,197 @@
+.container {
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: #fafaf9;
+}
+
+.contentWrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.actionBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: #57534e;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 1rem;
+}
+.backButton:hover { color: #1c1917; }
+
+.pdfButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    border: 1px solid #d6d3d1;
+    color: #44403c;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.pdfButton:hover { background-color: #f5f5f4; border-color: #a8a29e; }
+
+/* Estrutura do Documento */
+.card {
+    background: white;
+    border-radius: 1rem;
+    border: 1px solid #e7e5e4;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.cardHeader {
+    padding: 2rem;
+    background-color: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.headerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.statusBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.badgeVenda { background-color: #dcfce7; color: #166534; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+.badgeMorte { background-color: #fee2e2; color: #991b1b; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+.idLabel { color: #94a3b8; font-weight: 600; font-size: 0.9rem; }
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.iconGreen { color: #16a34a; }
+.iconRed { color: #dc2626; }
+
+.dateInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Nova Caixa de Informação (Arroba) */
+.infoBoxContainer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.infoBox {
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.infoBoxLabel { color: #64748b; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
+.infoBoxValue { color: #0284c7; font-size: 1.1rem; font-weight: 800; }
+
+/* Painel Financeiro */
+.financialGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.finCard {
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.lucroCard { background-color: #f0fdf4; border-color: #bbf7d0; }
+.prejuizoCard { background-color: #fef2f2; border-color: #fecaca; }
+
+.finLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #475569;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+.finValue { font-size: 1.5rem; font-weight: 800; color: #0f172a; }
+.lucroValue { font-size: 1.5rem; font-weight: 900; color: #16a34a; }
+.prejuizoValue { font-size: 1.5rem; font-weight: 900; color: #dc2626; }
+
+/* Corpo e Tabela */
+.cardBody { padding: 2rem; }
+.sectionTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #334155;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+.iconGray { color: #94a3b8; }
+
+.tableResponsive { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; text-align: left; }
+.table th { padding: 0.75rem 1rem; background-color: #f8fafc; color: #475569; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; border-bottom: 1px solid #e2e8f0; }
+.table td { padding: 1rem; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+
+.animalName { font-weight: 700; color: #1e293b; margin-bottom: 2px; }
+.animalOrigin { font-size: 0.8rem; color: #64748b; }
+.weightBadge { display: inline-block; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; color: #475569; margin-top: 4px; }
+.weightHighlight { color: #ea580c; background: #fff7ed; }
+
+.textRight { text-align: right; }
+.textCenter { text-align: center; }
+.fontMedium { font-weight: 500; }
+.fontBold { font-weight: 700; }
+.textStone { color: #78716c; }
+.textBlue { color: #0284c7; }
+.textGreen { color: #16a34a; }
+.textRed { color: #dc2626; }
+
+.bgGreenLight { background-color: #f0fdf4; border-radius: 4px; }
+.bgRedLight { background-color: #fef2f2; border-radius: 4px; }
+
+/* Rodapé */
+.printFooter {
+    padding: 1rem 2rem;
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.loadingContainer { display: flex; justify-content: center; align-items: center; min-height: 50vh; color: #16a34a; }

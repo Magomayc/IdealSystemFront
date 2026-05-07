@@ -1,0 +1,121 @@
+.container {
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #fafaf9;
+}
+
+.header { flex-shrink: 0; margin-bottom: 0.5rem; }
+.title { font-size: 1.8rem; font-weight: 800; color: #1c1917; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem;}
+.subtitle { color: #78716c; font-size: 0.9rem; }
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.listCard {
+    background-color: white;
+    border-radius: 0.75rem;
+    border: 1px solid #e7e5e4;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.searchBar { padding: 1rem; border-bottom: 1px solid #e7e5e4; display: flex; align-items: center; gap: 0.75rem; }
+.searchInput { flex: 1; border: none; outline: none; font-size: 0.9rem; }
+
+/* Estilo de cada linha - CORES DE ALERTA */
+.itemRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f5f5f4;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.itemRow.selected { background-color: #fef2f2; border-left: 4px solid #dc2626; }
+
+.itemHeader { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.25rem; }
+.itemHeader h4 { margin: 0; font-weight: 700; color: #292524; }
+.custoBadge { font-size: 10px; background: #f5f5f4; padding: 2px 6px; border-radius: 4px; color: #78716c; font-weight: 600; }
+.itemSubText { font-size: 0.8rem; color: #a8a29e; }
+
+/* Visualização do Item Selecionado */
+.displayItemBox { display: flex; align-items: center; gap: 1.5rem; }
+.itemStats { display: flex; flex-direction: column; gap: 4px; text-align: right; font-size: 0.85rem; color: #475569; }
+
+.rowActions { display: flex; gap: 4px; }
+.btnDelete { background: none; border: none; padding: 6px; border-radius: 6px; cursor: pointer; color: #94a3b8; display: flex; align-items: center; gap: 4px; font-size: 0.8rem; font-weight: 600; transition: 0.2s;}
+.btnDelete:hover { color: #dc2626; background: #fef2f2; }
+
+/* Summary Card */
+.summaryCard {
+    background: white; border: 1px solid #e7e5e4; border-radius: 1rem; padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+.summaryTitle { margin-top: 0; font-size: 1.2rem; font-weight: 800; border-bottom: 1px solid #f5f5f4; padding-bottom: 1rem; margin-bottom: 1rem; color: #991b1b; }
+
+.formSection { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+.formGroup { display: flex; flex-direction: column; gap: 4px; }
+.label { font-size: 0.75rem; font-weight: 700; color: #78716c; text-transform: uppercase; }
+.input { padding: 0.6rem; border: 1px solid #d6d3d1; border-radius: 0.5rem; outline: none; transition: 0.2s; font-size: 0.95rem; }
+.input:focus { border-color: #dc2626; }
+
+/* Linhas de Resumo Financeiro */
+.summaryRow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-size: 0.9rem; color: #57534e; }
+.summaryRowLabel { display: flex; align-items: center; gap: 6px; }
+.summaryRowIcon { color: #a8a29e; }
+.summaryRowValue { font-weight: 700; color: #292524; }
+
+/* Caixa de Prejuízo Final Destacada */
+.finalTotalBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 0.75rem;
+    color: #b91c1c;
+}
+.finalTotalLabel { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
+.finalTotalValue { font-size: 1.6rem; font-weight: 900; }
+
+.finishButton {
+    width: 100%; background: #dc2626; color: white; border: none; padding: 0.8rem; border-radius: 0.75rem; font-weight: 700; display: flex; justify-content: center; align-items: center; gap: 0.5rem; cursor: pointer; transition: transform 0.1s, background 0.2s;
+}
+.finishButton:hover { background: #b91c1c; }
+.finishButton:active { transform: scale(0.98); }
+.finishButton:disabled { background: #d6d3d1; cursor: not-allowed; }
+
+.backButton { display: flex; align-items: center; gap: 0.5rem; background: none; border: none; color: #78716c; font-weight: 600; cursor: pointer; margin-bottom: 1rem; transition: 0.2s; }
+.backButton:hover { color: #292524; }
+
+/* Modal de Validação Customizado - TEMA VERMELHO */
+.modalOverlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); display: flex; align-items: center; justify-content: center; z-index: 50; padding: 1rem; }
+.modalContainer { background-color: white; padding: 2rem; border-radius: 12px; max-width: 450px; width: 100%; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+.modalHeader { text-align: center; margin-bottom: 1.5rem; }
+.modalIcon { margin: 0 auto 1rem; color: #dc2626; }
+.modalTitle { font-size: 1.25rem; font-weight: bold; color: #0f172a; }
+.modalSubtitle { color: #64748b; font-size: 0.95rem; margin-top: 4px; }
+.modalBody { background-color: #f8fafc; padding: 1.25rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid #e2e8f0; }
+.modalValidacaoTabelaLinha { display: flex; justify-content: space-between; margin-bottom: 0.75rem; }
+.modalValidacaoTabelaLabel { color: #475569; }
+.modalValidacaoTabelaValor { color: #0f172a; font-weight: 600; }
+.modalValidacaoSeparador { border-top: 1px dashed #cbd5e1; margin: 1rem 0; }
+.modalValidacaoDestaque { display: flex; justify-content: space-between; align-items: center; }
+.modalValidacaoDestaqueLabel { color: #b91c1c; font-weight: bold; }
+.modalValidacaoDestaqueValor { font-size: 1.25rem; color: #dc2626; font-weight: bold; }
+.modalValidacaoAcoes { display: flex; gap: 1rem; justify-content: center; }
+.btnModalCancelar { padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #cbd5e1; background-color: white; color: #475569; font-weight: 600; cursor: pointer; flex: 1; transition: 0.2s; }
+.btnModalCancelar:hover { background-color: #f1f5f9; }
+.btnModalConfirmar { padding: 0.75rem 1rem; border-radius: 8px; border: none; background-color: #dc2626; color: white; font-weight: 600; cursor: pointer; flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; transition: 0.2s; }
+.btnModalConfirmar:hover { background-color: #b91c1c; }

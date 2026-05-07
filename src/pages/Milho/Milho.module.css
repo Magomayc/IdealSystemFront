@@ -1,0 +1,262 @@
+/* Container Principal */
+.container {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    padding: 32px 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.contentWrapper {
+    max-width: 800px; /* Tamanho ideal para simular uma folha A4 */
+    margin: 0 auto;
+}
+
+/* Header com Botões */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.backButton:hover {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+.printButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #334155;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.printButton:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+}
+
+/* ÁREA DO RECIBO (Card Branco) */
+.reciboCard {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.reciboHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.empresaLogo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.empresaLogo h2 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 1.5rem;
+}
+
+.empresaLogo p {
+    margin: 4px 0 0 0;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.reciboInfo {
+    text-align: right;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 24px 0;
+}
+
+.dadosGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.dadoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dadoLabel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.dadoValor {
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Tabela de Itens */
+.tabelaValores {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+}
+
+.tabelaValores th {
+    background: #f8fafc;
+    padding: 12px;
+    color: #475569;
+    font-weight: 600;
+    text-align: left;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.tabelaValores td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.textRight { text-align: right !important; }
+
+/* Pagamento e Totais */
+.pagamentoInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.pagamentoBox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.totalBox {
+    text-align: right;
+}
+
+.totalBox span {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.totalBox h2 {
+    margin: 4px 0 0 0;
+    color: #166534;
+    font-size: 2rem;
+}
+
+.observacaoBox {
+    margin-bottom: 40px;
+    padding: 16px;
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    border-radius: 4px;
+    color: #78350f;
+    font-size: 0.95rem;
+}
+
+/* Rodapé do Recibo */
+.reciboFooter {
+    margin-top: 60px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.assinatura {
+    width: 300px;
+    margin: 40px auto 0 auto;
+}
+
+.assinatura hr {
+    border: 0;
+    border-top: 1px solid #cbd5e1;
+    margin-bottom: 8px;
+}
+
+.loadingMensagem {
+    padding: 100px;
+    text-align: center;
+    color: #64748b;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   MÁGICA DE IMPRESSÃO / PDF
+   ========================================= */
+@media print {
+    /* Esconde botões, navbar lateral e fundo cinza */
+    .noPrint, aside, nav, header {
+        display: none !important;
+    }
+
+    body, .container {
+        background-color: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .contentWrapper {
+        max-width: 100% !important;
+    }
+
+    /* Tira a borda e sombra do card para ficar igual papel */
+    .reciboCard {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    /* Força cores exatas no PDF (Backgrounds do card de pagamento) */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}

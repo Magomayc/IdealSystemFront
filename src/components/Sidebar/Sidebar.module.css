@@ -1,0 +1,97 @@
+/* src/components/Sidebar/Sidebar.module.css */
+
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  border-right: 1px solid #e7e5e4; /* stone-200 */
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Garante que ocupe a altura total da janela */
+  position: sticky; /* Opcional: mantém a sidebar fixa ao rolar */
+  top: 0;
+  flex-shrink: 0;
+}
+
+.logoContainer {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e7e5e4;
+}
+
+/* 👇 Estilo da Logo Nova (Ícone + Texto) */
+.logoTitle {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ea580c; /* Laranja forte */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  letter-spacing: -0.02em;
+}
+
+.logoTitle:hover {
+  opacity: 0.8;
+}
+
+.nav {
+  flex: 1;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: #57534e; /* stone-600 */
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-right: 3px solid transparent; /* Reserva espaço para a borda ativa */
+  font-size: 1.05rem;
+}
+
+.navLink:hover {
+  background-color: #fff7ed; /* orange-50 */
+  color: #ea580c; /* orange-600 */
+}
+
+/* Classe aplicada condicionalmente no React quando a rota é a atual */
+.activeLink {
+  background-color: #ffedd5; /* orange-100 */
+  color: #c2410c; /* orange-700 */
+  border-right-color: #ea580c;
+  font-weight: 600;
+}
+
+.footer {
+  padding: 1rem;
+  border-top: 1px solid #e7e5e4;
+}
+
+.logoutBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #dc2626; /* red-600 */
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.logoutBtn:hover {
+  background-color: #fef2f2; /* red-50 */
+}

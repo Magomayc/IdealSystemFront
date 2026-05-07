@@ -1,0 +1,181 @@
+.container {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    padding: 32px 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.contentWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.backButton:hover {
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin: 0;
+}
+
+.formCard {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputGroup label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+/* Ajustado para incluir select */
+.inputGroup input, 
+.inputGroup textarea, 
+.inputGroup select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    background-color: white;
+    transition: border-color 0.2s;
+}
+
+.inputGroup input:focus, 
+.inputGroup textarea:focus, 
+.inputGroup select:focus {
+    border-color: #ca8a04;
+    box-shadow: 0 0 0 3px rgba(202, 138, 4, 0.1);
+}
+
+.costSummary {
+    margin-top: 24px;
+    background-color: #fef9c3;
+    border-left: 4px solid #ca8a04;
+    padding: 16px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.costInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #854d0e;
+}
+
+.costInfo span {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.costInfo strong {
+    font-size: 1.1rem;
+}
+
+/* Utilitário para o valor em dinheiro */
+.textGreen {
+    color: #166534;
+}
+
+.formActions {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 24px;
+}
+
+.cancelButton {
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ca8a04;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.saveButton:hover {
+    background-color: #a16207;
+}
+
+.saveButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsividade básica para o grid */
+@media (max-width: 600px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .costSummary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}

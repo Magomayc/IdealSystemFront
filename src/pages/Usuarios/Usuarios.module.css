@@ -1,0 +1,232 @@
+/* src/pages/Usuarios/Usuarios.module.css */
+
+.container { 
+    min-height: 100vh; 
+    padding: 2rem; 
+    background-color: #f8fafc; /* Padronizado com as outras telas */
+    display: flex;
+    justify-content: center;
+}
+
+.contentWrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* --- HEADER PADRONIZADO --- */
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+}
+
+.titleWrapper h1 { 
+    font-size: 1.75rem; 
+    font-weight: 800; 
+    color: #1e293b; 
+    margin: 0 0 0.25rem 0;
+    letter-spacing: -0.02em;
+}
+
+.subtitle { 
+    color: #64748b; 
+    margin: 0;
+    font-size: 0.95rem; 
+}
+
+.newButton { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    padding: 0.75rem 1.25rem; 
+    background-color: #ea580c; 
+    color: white; 
+    font-weight: 600; 
+    border-radius: 0.5rem; 
+    text-decoration: none; 
+    transition: 0.2s; 
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(234, 88, 12, 0.2);
+}
+
+.newButton:hover { 
+    background-color: #c2410c; 
+    transform: translateY(-1px);
+}
+
+/* --- BARRA DE BUSCA PADRONIZADA --- */
+.filterCard {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.inputGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 12px;
+    color: #94a3b8;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+    color: #334155;
+}
+
+.input:focus {
+    border-color: #ea580c;
+}
+
+.cancelButton {
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    color: #64748b;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.cancelButton:hover {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+/* --- TABELA PADRONIZADA --- */
+.tableContainer { 
+    background: white; 
+    border-radius: 0.75rem; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #e2e8f0; 
+    overflow: hidden; 
+}
+
+.table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: left; 
+}
+
+.thead th { 
+    padding: 1rem 1.5rem; 
+    background-color: #f8fafc; 
+    border-bottom: 1px solid #e2e8f0; 
+    color: #475569; 
+    font-weight: 600; 
+    font-size: 0.85rem; 
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tbody tr {
+    transition: background-color 0.2s;
+}
+
+.tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.tbody td { 
+    padding: 1rem 1.5rem; 
+    border-bottom: 1px solid #f1f5f9; 
+    color: #334155; 
+    font-size: 0.95rem; 
+    vertical-align: middle;
+}
+
+.tdId { 
+    font-family: monospace; 
+    color: #94a3b8 !important; 
+    font-weight: 600; 
+}
+
+.tdBold { 
+    font-weight: 600; 
+    color: #0f172a !important; 
+}
+
+.textRight { 
+    text-align: right; 
+}
+
+/* --- BADGES E BOTÕES DE AÇÃO --- */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badgeAdmin { background-color: #fff7ed; color: #ea580c; border: 1px solid #ffedd5; }
+.badgeUser { background-color: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+
+.actionsWrapper { 
+    display: flex; 
+    justify-content: flex-end; 
+    gap: 8px; 
+}
+
+.actionBtn { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 6px 10px; 
+    border-radius: 6px;
+    transition: all 0.2s; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnBlue { color: #2563eb; background-color: #eff6ff; }
+.btnBlue:hover { background-color: #dbeafe; }
+
+.btnRed { color: #dc2626; background-color: #fef2f2; }
+.btnRed:hover { background-color: #fee2e2; }
+
+/* --- ESTADOS DE LOADING E VAZIO --- */
+.loadingContainer { 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    gap: 16px;
+    color: #ea580c;
+    font-weight: 500; 
+}
+
+.emptyState {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: #94a3b8;
+    text-align: center;
+}

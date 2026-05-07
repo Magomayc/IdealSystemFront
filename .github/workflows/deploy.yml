@@ -1,0 +1,134 @@
+# ============================================
+# CI/CD Pipeline - Deploy GadoFront na Hostinger VPS
+# ============================================
+# Dispara automaticamente ao fazer push na branch main.
+# 
+# SECRETS NECESSÁRIOS no GitHub (Settings > Secrets and variables > Actions):
+#
+#   DOCKERHUB_USERNAME   → Seu usuário do Docker Hub
+#   DOCKERHUB_TOKEN      → Access Token do Docker Hub
+#   VPS_HOST             → IP ou domínio do seu VPS Hostinger
+#   VPS_USERNAME         → Usuário SSH do VPS (ex: root)
+#   VPS_SSH_KEY          → Chave SSH privada para acessar o VPS
+#   VITE_API_URL         → URL da API em produção (ex: https://api.seudominio.com)
+# ============================================
+
+name: Deploy GadoFront
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  DOCKER_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/gado-front
+
+jobs:
+  # ──────────────────────────────────────────
+  # Job 1: Build e Lint
+  # ──────────────────────────────────────────
+  build:
+    name: 🔨 Build & Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout do código
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: 📋 Instalar dependências
+        run: npm ci
+
+      - name: 🔍 Lint
+        run: npm run lint
+
+      - name: 🏗️ Build de produção
+        run: npm run build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+
+      - name: 📤 Upload do build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 1
+
+  # ──────────────────────────────────────────
+  # Job 2: Build e Push da imagem Docker
+  # ──────────────────────────────────────────
+  docker:
+    name: 🐳 Docker Build & Push
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: 📥 Checkout do código
+        uses: actions/checkout@v4
+
+      - name: 🔐 Login no Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: 🏷️ Gerar metadata da imagem
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.DOCKER_IMAGE }}
+          tags: |
+            type=sha,prefix=
+            type=raw,value=latest
+
+      - name: 🏗️ Build e Push da imagem
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          build-args: |
+            VITE_API_URL=${{ secrets.VITE_API_URL }}
+
+  # ──────────────────────────────────────────
+  # Job 3: Deploy no VPS Hostinger
+  # ──────────────────────────────────────────
+  deploy:
+    name: 🚀 Deploy na Hostinger
+    runs-on: ubuntu-latest
+    needs: docker
+
+    steps:
+      - name: 🔌 Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            echo "🐳 Fazendo login no Docker Hub..."
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+            echo "📥 Puxando imagem mais recente..."
+            docker pull ${{ env.DOCKER_IMAGE }}:latest
+
+            echo "🛑 Parando container atual (se existir)..."
+            docker stop gado-front 2>/dev/null || true
+            docker rm gado-front 2>/dev/null || true
+
+            echo "🚀 Iniciando novo container..."
+            docker run -d \
+              --name gado-front \
+              --restart unless-stopped \
+              -p 3000:80 \
+              ${{ env.DOCKER_IMAGE }}:latest
+
+            echo "🧹 Limpando imagens antigas..."
+            docker image prune -af --filter "until=24h"
+
+            echo "✅ Deploy do GadoFront concluído!"

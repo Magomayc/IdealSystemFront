@@ -1,0 +1,35 @@
+/* src/index.css */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  /* Esquema de cores padrão */
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Removemos as margens padrão do navegador */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden; /* Evita rolagem lateral indesejada */
+}
+
+/* IMPORTANTE: Garante que o App ocupe toda a tela */
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* Removemos o max-width: 1280px que vem por padrão */
+  max-width: none; 
+  text-align: left; /* Removemos o text-align: center padrão */
+}

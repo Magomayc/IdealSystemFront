@@ -1,0 +1,341 @@
+/* Container Principal */
+.container {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    padding: 32px 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.contentWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.primaryButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.primaryButton:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Dashboard Cards */
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.cardIcon {
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardLabel {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.cardValue {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.2;
+}
+
+.cardSubValue {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+/* Filtros e Busca */
+.filterCard {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.inputGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 12px;
+    color: #94a3b8;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: #ca8a04;
+}
+
+/* Botão de Cancelar / Limpar Filtro */
+.cancelButton {
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    color: #64748b;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancelButton:hover {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+/* Tabela */
+.tableCard {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.tableContainer {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f8fafc;
+    padding: 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.table td {
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.table tr:hover {
+    background-color: #fcfcfd;
+}
+
+/* Utilitários de Tabela */
+.textRight { text-align: right; }
+.fontBold { font-weight: 700; }
+.fontMedium { font-weight: 500; }
+.textGreen { color: #166534; }
+.textStone { color: #78716c; }
+
+.dateInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+/* --- BADGES (Etiquetas Coloridas) --- */
+.badgeYellow {
+    background-color: #fef9c3;
+    color: #854d0e;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badgeBlue { 
+    background-color: #eff6ff; 
+    color: #1d4ed8; 
+    padding: 4px 12px; 
+    border-radius: 20px; 
+    font-size: 0.85rem; 
+    font-weight: 600;
+}
+
+.badgeGreen { 
+    background-color: #dcfce7; 
+    color: #15803d; 
+    padding: 4px 12px; 
+    border-radius: 20px; 
+    font-size: 0.85rem; 
+    font-weight: 600;
+}
+
+.badgeRed { 
+    background-color: #fef2f2; 
+    color: #b91c1c; 
+    padding: 4px 12px; 
+    border-radius: 20px; 
+    font-size: 0.85rem; 
+    font-weight: 600;
+}
+
+/* Ações */
+.flexEnd {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.actionBtn {
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnBlue { background-color: #eff6ff; color: #2563eb; }
+.btnBlue:hover { background-color: #dbeafe; }
+
+.btnRed { background-color: #fef2f2; color: #dc2626; }
+.btnRed:hover { background-color: #fee2e2; }
+
+/* Estados Vazios e Loading */
+.loadingContainer, .emptyState {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: #64748b;
+}
+
+.emptyState p {
+    font-size: 1.1rem;
+}
+
+/* --- SISTEMA DE ABAS (TABS) --- */
+.tabsContainer {
+    display: flex;
+    gap: 4px;
+    margin-bottom: -1px; /* Para conectar visualmente com o filtro abaixo */
+    position: relative;
+    z-index: 2;
+}
+
+.tabButton {
+    padding: 12px 24px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-bottom: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.tabButton:hover:not(.activeTab) {
+    background-color: #f1f5f9;
+    color: #334155;
+}
+
+.activeTab {
+    background-color: white;
+    color: #ca8a04; /* Amarelo temático */
+    border-bottom: 2px solid white; /* Esconde a borda de baixo para "fundir" com o card de filtro */
+}
+
+/* === ESCONDER ITENS NA IMPRESSÃO DA LISTA === */
+@media print {
+    aside, nav, header, .no-print { 
+        display: none !important; 
+    }
+    body {
+        background-color: white !important;
+    }
+    .container { 
+        padding: 0 !important; 
+        background: white !important; 
+    }
+    .tableCard { 
+        box-shadow: none !important; 
+        border: none !important; 
+    }
+    /* Expande a tela para ocupar toda a folha */
+    .contentWrapper { 
+        max-width: 100% !important; 
+        margin: 0 !important; 
+    }
+    /* Garante que os badges mantenham as cores na impressão */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}

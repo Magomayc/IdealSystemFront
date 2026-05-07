@@ -1,0 +1,359 @@
+/* src/pages/Animais/Animais.module.css */
+
+/* --- ESTILOS PRINCIPAIS --- */
+.container { 
+    min-height: 100%; 
+    padding: 2rem; 
+    background-color: #fafaf9; 
+}
+
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    margin-bottom: 2rem; 
+}
+
+.titleWrapper h1 { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    color: #1c1917; 
+    margin-bottom: 0.25rem;
+}
+
+.subtitle { 
+    color: #78716c; 
+    font-size: 0.875rem; 
+}
+
+.newButton { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    padding: 0.75rem 1.25rem; 
+    background-color: #ea580c; 
+    color: white; 
+    font-weight: 600; 
+    border-radius: 0.5rem; 
+    text-decoration: none; 
+    transition: 0.2s; 
+    border: none;
+    cursor: pointer;
+}
+
+.newButton:hover { 
+    background-color: #c2410c; 
+}
+
+/* --- ABAS (TABS) --- */
+.tabsContainer { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 16px; 
+}
+
+.tabButton { 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    border: none; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+.tabActive { 
+    background-color: #ea580c; 
+    color: white; 
+}
+
+.tabInactive { 
+    background-color: #e7e5e4; 
+    color: #57534e; 
+}
+
+.tabInactive:hover { 
+    background-color: #d6d3d1; 
+}
+
+/* --- NOVA BARRA DE BUSCA E FILTRO --- */
+.filterCard {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    border: 1px solid #e7e5e4;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.inputGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 12px;
+    color: #a8a29e;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #d6d3d1;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+    color: #44403c;
+}
+
+.input:focus {
+    border-color: #ea580c;
+}
+
+.cancelButton {
+    background: transparent;
+    border: 1px solid #d6d3d1;
+    color: #78716c;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancelButton:hover {
+    background: #f5f5f4;
+    color: #44403c;
+}
+
+.pdfButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    background-color: #44403c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.pdfButton:hover {
+    opacity: 0.9;
+}
+
+.pdfButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* --- TABELA E CONTEÚDO --- */
+.tableContainer { 
+    background: white; 
+    border-radius: 1rem; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #e7e5e4; 
+    overflow: hidden; 
+}
+
+.table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: left; 
+}
+
+.thead th { 
+    padding: 1rem; 
+    background-color: #f5f5f4; 
+    border-bottom: 1px solid #e7e5e4; 
+    color: #44403c; 
+    font-weight: 600; 
+    font-size: 0.875rem; 
+}
+
+.tbody td { 
+    padding: 1rem; 
+    border-bottom: 1px solid #e7e5e4; 
+    color: #57534e; 
+    font-size: 0.875rem; 
+    vertical-align: middle;
+}
+
+.tdBold { 
+    font-weight: 600; 
+    color: #1c1917; 
+}
+
+/* Alinhamentos e Cores da Tabela */
+.textCenter { text-align: center; }
+.textRight { text-align: right; }
+.valorEntrada { color: #16a34a; font-weight: 600; }
+
+/* --- BOTÕES DE AÇÃO NA TABELA --- */
+.actionsWrapper { 
+    display: flex; 
+    justify-content: flex-end; 
+    gap: 8px; 
+}
+
+.actionBtn { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 6px; 
+    border-radius: 6px;
+    transition: all 0.2s; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actionBtn:hover { 
+    transform: translateY(-1px); 
+}
+
+/* Cores específicas dos botões de ação */
+.btnBlue { color: #2563eb; background-color: #eff6ff; }
+.btnBlue:hover { background-color: #dbeafe; }
+
+.btnEdit { color: #ea580c; background-color: #fff7ed; }
+.btnEdit:hover { background-color: #ffedd5; }
+
+.btnDelete { color: #dc2626; background-color: #fef2f2; }
+.btnDelete:hover { background-color: #fee2e2; }
+
+/* Pílula/Badge de Regime (Toggle) */
+.toggleBtn { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 6px; 
+    padding: 6px 12px; 
+    border-radius: 9999px; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+    border: none; 
+    cursor: pointer; 
+    transition: all 0.2s; 
+}
+
+.toggleBtn:hover { 
+    opacity: 0.8; 
+    transform: scale(1.05); 
+}
+
+.togglePasto { background-color: #dcfce7; color: #166534; }
+.toggleCocho { background-color: #fef08a; color: #854d0e; }
+.toggleArrow { margin-left: 4px; opacity: 0.6; }
+
+/* --- ESTADOS (LOADING E VAZIO) --- */
+.loadingContainer { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    color: #ea580c; 
+}
+
+.emptyState { 
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: #78716c;
+    text-align: center;
+}
+
+/* --- MODAIS CUSTOMIZADOS --- */
+.modalOverlay { 
+    position: fixed; 
+    top: 0; left: 0; right: 0; bottom: 0; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 50; 
+    padding: 1rem; 
+}
+
+.modalCard { 
+    background-color: white; 
+    padding: 2rem; 
+    border-radius: 12px; 
+    max-width: 400px; 
+    width: 100%; 
+    text-align: center; 
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); 
+}
+
+.modalIcon { margin: 0 auto 1rem; }
+.iconBlue { color: #2563eb; }
+.iconRed { color: #dc2626; }
+
+.modalTitle { 
+    font-size: 1.25rem; 
+    font-weight: bold; 
+    color: #1c1917; 
+    margin-bottom: 0.5rem; 
+}
+
+.modalText { 
+    color: #57534e; 
+    margin-bottom: 1.5rem; 
+    font-size: 0.95rem; 
+}
+
+.modalButtons { 
+    display: flex; 
+    gap: 1rem; 
+    justify-content: center; 
+}
+
+.btnCancel { 
+    padding: 0.5rem 1rem; 
+    border-radius: 8px; 
+    border: 1px solid #d6d3d1; 
+    background-color: white; 
+    color: #44403c; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+.btnCancel:hover { background-color: #f5f5f4; }
+
+.btnConfirmBlue { 
+    padding: 0.5rem 1rem; 
+    border-radius: 8px; 
+    border: none; 
+    background-color: #2563eb; 
+    color: white; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+.btnConfirmBlue:hover { background-color: #1d4ed8; }
+
+.btnConfirmRed { 
+    padding: 0.5rem 1rem; 
+    border-radius: 8px; 
+    border: none; 
+    background-color: #dc2626; 
+    color: white; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+.btnConfirmRed:hover { background-color: #b91c1c; }

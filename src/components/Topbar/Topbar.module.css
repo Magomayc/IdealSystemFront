@@ -1,0 +1,69 @@
+.header {
+  height: 64px;
+  background-color: #fff;
+  border-bottom: 1px solid #e7e5e4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 40;
+}
+
+/* --- Seção Direita --- */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* --- Wrapper do Avatar (Container Inteiro Clickável) --- */
+.avatarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem; 
+  margin-left: 0.5rem;
+  cursor: pointer;
+  text-decoration: none; 
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.avatarContainer:hover {
+  background-color: #f5f5f4; /* Leve sombreamento no fundo ao passar o mouse */
+}
+
+/* --- Nome do Usuário --- */
+.userName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #57534e; /* stone-600 */
+}
+
+/* --- O Quadrado Arredondado com o Ícone --- */
+.avatar {
+  height: 2.5rem; /* 40px */
+  width: 2.5rem;
+  border-radius: 0.5rem; /* Quadrado arredondado */
+  
+  background-color: #ea580c; /* Laranja forte */
+  color: white; /* Deixa o ícone de dentro branco */
+  
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+/* Efeito no quadrado ao passar o mouse no container */
+.avatarContainer:hover .avatar {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 4px #ffedd5; /* anel laranja claro */
+}

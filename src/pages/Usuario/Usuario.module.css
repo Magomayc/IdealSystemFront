@@ -1,0 +1,187 @@
+/* src/pages/Usuario/Usuario.module.css */
+
+.container {
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: #f8fafc; /* Padronizado com as outras telas */
+    display: flex;
+    justify-content: center;
+}
+
+.contentWrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* --- CABEÇALHO PADRÃO --- */
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+}
+
+.titleWrapper h1 { 
+    font-size: 1.75rem; 
+    font-weight: 800; 
+    color: #1e293b; 
+    margin: 0 0 0.25rem 0;
+    letter-spacing: -0.02em;
+}
+
+.subtitle { 
+    color: #64748b; 
+    margin: 0;
+    font-size: 0.95rem; 
+}
+
+/* --- CONTAINER DO CARTÃO --- */
+.cardContainer {
+    display: flex;
+    justify-content: center; /* Centraliza o cartão na tela */
+    width: 100%;
+}
+
+/* O Cartão Principal */
+.card {
+    background-color: white;
+    width: 100%;
+    max-width: 450px; /* Largura controlada e elegante */
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    display: flex;        
+    flex-direction: column;
+}
+
+/* Banner Laranja no topo */
+.banner {
+    height: 120px;
+    width: 100%;
+    background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+    position: relative;
+}
+
+/* O Quadrado Arredondado da Foto */
+.avatarWrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%); /* Centraliza e desce metade */
+    z-index: 10;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 16px; /* 👇 Formato quadrado arredondado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ea580c; /* Laranja forte */
+    border: 4px solid white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Área de Texto */
+.content {
+    padding: 4rem 2.5rem 2.5rem 2.5rem; /* Espaço no topo para a foto */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+}
+
+.email {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Badge (Etiqueta Arredondada) */
+.roleBadge {
+    display: inline-block;
+    padding: 0.4rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    border: 1px solid transparent;
+}
+
+.roleAdmin {
+    background-color: #fff7ed; 
+    color: #ea580c;           
+    border-color: #ffedd5;
+}
+
+.roleUser {
+    background-color: #f1f5f9; 
+    color: #475569;           
+    border-color: #e2e8f0;
+}
+
+/* Caixa de Detalhes (Fundo cinza leve) */
+.detailsBox {
+    background-color: #f8fafc;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid #f1f5f9;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.detailItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Caixinha para o ícone */
+.iconBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: white;
+    border-radius: 8px;
+    color: #ea580c;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.detailText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.value {
+    font-size: 0.95rem;
+    color: #334155;
+    font-weight: 600;
+}
